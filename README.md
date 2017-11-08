@@ -83,7 +83,7 @@ Route::get('/opd', function () {
 3. http://127.0.0.1:8000/laravel-opd/create-child
 ```
 
-## [TODO](https://github.com/bantenprov/laravel-opd/blob/master/TODO.md) : 
+## [TODO](https://github.com/bantenprov/laravel-opd/blob/1.0/TODO.md) : 
 
 
 > Untuk keterangan lebih lanjut silahkan lihat di [halaman wiki](https://github.com/bantenprov/laravel-opd/blob/1.0/TODO.md). 
