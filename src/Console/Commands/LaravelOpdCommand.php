@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
  * The LaravelOpdCommand class.
  *
  * @package Bantenprov\LaravelOpd
- * @author  bantenprov <developer.banten@gmail.com>
+ * @author  bantenprov <developer.bantenprov@gmail.com>
  */
 class LaravelOpdCommand extends Command
 {

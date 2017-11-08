@@ -1,33 +1,20 @@
 <?php namespace Bantenprov\LaravelOpd\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Kalnoy\Nestedset\NodeTrait;
 
 /**
  * The LaravelOpdModel class.
  *
  * @package Bantenprov\LaravelOpd
- * @author  bantenprov <developer.banten@gmail.com>
+ * @author  bantenprov <developer.bantenprov@gmail.com>
  */
 class LaravelOpdModel extends Model
 {
-    /**
-    * Table name.
-    *
-    * @var string
-    */
-    protected $table = 'laravel_opd';
-
-    /**
-    * The attributes that are mass assignable.
-    *
-    * @var mixed
-    */
-    protected $fillable = [];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
+    use NodeTrait;
+    
+    protected $table = "ref_unkerjas";
+    protected $fillable = ['kunker','name','kunker_simral','levelunker'];
     protected $hidden = [];
 }
+

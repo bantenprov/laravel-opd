@@ -6,7 +6,7 @@ use Exception;
  * The LaravelOpdException class.
  *
  * @package Bantenprov\LaravelOpd
- * @author  bantenprov <developer.banten@gmail.com>
+ * @author  bantenprov <developer.bantenprov@gmail.com>
  */
 class LaravelOpdException extends Exception
 {

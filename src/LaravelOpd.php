@@ -2,22 +2,21 @@
 
 namespace Bantenprov\LaravelOpd;
 
-
-use Illuminate\Support\Facades\Config;
-use Bantenprov\LaravelOpd\Models\Opd;
+use Bantenprov\LaravelOpd\Models\LaravelOpdModel;
+use Illuminate\Http\Request;
 /**
  * The LaravelOpd class.
  *
  * @package Bantenprov\LaravelOpd
- * @author  bantenprov <developer.banten@gmail.com>
+ * @author  bantenprov <developer.bantenprov@gmail.com>
  */
 class LaravelOpd
 {
     protected $opd_model;
-
+    
     public function __construct()
     {        
-        $this->opd_model = new Opd();
+        $this->opd_model = new LaravelOpdModel();
     }
 
     public function welcome()
@@ -25,37 +24,84 @@ class LaravelOpd
         return 'Welcome to Bantenprov\LaravelOpd package';
     }
 
-    public function getAll()
-    {        
-        return $this->opd_model->all();
+    public function index()
+    {
+        return $opds = LaravelOpdModel::all();                               
+
+        //return view('unit_kerja.index',compact('opds'));
+        
     }
 
-    public function getByName($name)
-    {                
-        $opd = $this->opd_model->where('name',$name)->first();
-        return (is_null($opd)) ? $this->returnErrorIfNoResult() : $opd;
-    }   
-
-    public function getName()
+    public function tree()
     {
+        $nodes = LaravelOpdModel::get()->toTree();
         
-        $opd_names = [];
-        foreach($this->opd_model->all() as $key => $opd_name)
-        {
-            array_push($opd_names,(object)['name'=>$opd_name->name]);
-        }
+        $traverse = function ($categories, $prefix = '-') use (&$traverse) {
+            foreach ($categories as $category) {
+                echo $prefix.' '.$category->kunker.' - '.$category->name.'<br>';
         
-        return $opd_names;
+                $traverse($category->children, $prefix.'-');
+            }
+        };
+        
+        return $traverse($nodes); 
     }
 
-    public function store($data = [])
+    public function createRoot()
     {
-        $this->opd_model->create($data);
+
+        return view('unit_kerja.create-root');
+    }
+
+    public function createChild()
+    {
+        return $unit_kerjas = LaravelOpdModel::all();
+
+        //return view('unit_kerja.create-child',compact('unit_kerjas'));
+    }
+
+    public function addChild($id)
+    {
+        return $unit_kerja = LaravelOpdModel::where('id',$id)->first();
+
+        //return view('unit_kerja.add-child',compact('unit_kerja'));
     }
     
+    public function storeRoot($request = array())
+    {        
+        $check_root = LaravelOpdModel::where('id',$request->root);
+        
+        if($check_root->first()->isEmpty())
+        {                        
 
-    private function returnErrorIfNoResult()
+            $unit_kerja = LaravelOpdModel::create([
+                'kunker' => $request->kunker,
+                'kunker_simral' => '',
+                'name' => $request->name,
+                'levelunker' => $request->levelunker,
+            ]);
+        }
+        else
+        {
+            return redirect()->back();
+        }
+
+        
+
+        return redirect()->back();
+    }
+
+    public function storeChild($request = array())
     {
-        return "No result";
+        $check_root = LaravelOpdModel::where('id',$request->root);
+                          
+            $check_root->first()->children()->create([
+                'kunker' => $request->c_kunker,
+                'kunker_simral' => '',
+                'name' => $request->c_name,
+                'levelunker' => $request->c_levelunker,
+            ]);        
+
+        return redirect()->back();
     }
 }

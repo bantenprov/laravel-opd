@@ -7,7 +7,7 @@ use Bantenprov\LaravelOpd\Console\Commands\LaravelOpdCommand;
  * The LaravelOpdServiceProvider class
  *
  * @package Bantenprov\LaravelOpd
- * @author  bantenprov <developer.banten@gmail.com>
+ * @author  bantenprov <developer.bantenprov@gmail.com>
  */
 class LaravelOpdServiceProvider extends ServiceProvider
 {
@@ -32,13 +32,7 @@ class LaravelOpdServiceProvider extends ServiceProvider
         $this->langHandle();
         $this->viewHandle();
         $this->assetHandle();
-        
-
-
-        $this->publishes([   
-            $this->migrationHandle(),            
-            __DIR__.'/config/opd.php' => config_path('opd.php')
-        ], 'opd');
+        $this->migrationHandle();
     }
 
     /**
@@ -56,7 +50,7 @@ class LaravelOpdServiceProvider extends ServiceProvider
             return new LaravelOpdCommand;
         });
 
-        $this->commands('command.laravel-opd');
+        //$this->commands('command.laravel-opd');
     }
 
     /**

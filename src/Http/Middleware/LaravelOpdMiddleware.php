@@ -6,7 +6,7 @@ use Closure;
  * The LaravelOpdMiddleware class.
  *
  * @package Bantenprov\LaravelOpd
- * @author  bantenprov <developer.banten@gmail.com>
+ * @author  bantenprov <developer.bantenprov@gmail.com>
  */
 class LaravelOpdMiddleware
 {

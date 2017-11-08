@@ -13,7 +13,7 @@ return [
     */
 
     'author'         => 'bantenprov',
-    'email'          => 'developer.banten@gmail.com',
+    'email'          => 'developer.bantenprov@gmail.com',
     'package_vendor' => 'Bantenprov',
     'package_name'   => 'LaravelOpd'
 

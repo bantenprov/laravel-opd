@@ -1,4 +1,6 @@
-<?php namespace Bantenprov\LaravelOpd\Facades;
+<?php 
+
+namespace Bantenprov\LaravelOpd\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -6,7 +8,7 @@ use Illuminate\Support\Facades\Facade;
  * The LaravelOpd facade.
  *
  * @package Bantenprov\LaravelOpd
- * @author  bantenprov <developer.banten@gmail.com>
+ * @author  bantenprov <developer.bantenprov@gmail.com>
  */
 class LaravelOpd extends Facade
 {

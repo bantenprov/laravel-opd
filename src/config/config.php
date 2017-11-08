@@ -12,7 +12,6 @@ return [
     |
     */
 
-    'key' => 'value',
-    'version' => '1.0.0'
+    'key' => 'value'
 
 ];
