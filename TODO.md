@@ -16,3 +16,4 @@
 
 4. Buat API untuk CRUD data
 5. Buat setting untuk [Modus mandiri dan integrasi](https://github.com/bantenprov/laravel-opd/issues/1). 
+6. Buat validasi kode chlid agar sesuai dengan root dan level unit kerjanya
