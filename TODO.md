@@ -15,3 +15,4 @@
 ![Form untuk menambahkan child OPD root diketahui](https://developer-banten.net/file/github/laravel-opd/003-form-menambah-child-opd-dengan-diketahui.jpeg)
 
 4. Buat API untuk CRUD data
+5. Buat setting untuk [Modus mandiri dan integrasi](https://github.com/bantenprov/laravel-opd/issues/1). 
