@@ -9,7 +9,7 @@ $ composer create-project --prefer-dist laravel/laravel project-name "5.4.*"
 ## Install package :
 
 ```bash
-$ composer bantenprov/laravel-opd "1.0.0"
+$ composer require bantenprov/laravel-opd "1.0.0"
 ```
 
 ## Edit config/app.php
@@ -41,8 +41,8 @@ $ composer bantenprov/laravel-opd "1.0.0"
 ## Artisan command :
 
 ```bash
-$ php artisan vendor:publish --tag=migration
-$ php artisan vendor:publish --tag=view
+$ php artisan vendor:publish --tag=migrations
+$ php artisan vendor:publish --tag=views
 ```
 
 ## Contoh pengunaan :
