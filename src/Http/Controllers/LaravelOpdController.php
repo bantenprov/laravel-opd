@@ -62,7 +62,7 @@ class LaravelOpdController extends Controller
     {        
         $check_root = LaravelOpdModel::where('id',$request->root);
         
-        if($check_root->first()->isEmpty())
+        if($check_root->get()->isEmpty())
         {                        
 
             $unit_kerja = LaravelOpdModel::create([
