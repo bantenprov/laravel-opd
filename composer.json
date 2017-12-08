@@ -1,10 +1,14 @@
 {
     "name": "bantenprov/laravel-opd",
     "description": "Repository untuk membuat melakukan proses data Organisasi Perangkat Daerah",
+    "homepage": "https://github.com/bantenprov/laravel-opd",
+    "license": "MIT",
     "authors": [
         {
             "name": "bantenprov",
-            "email": "developer.bantenprov@gmail.com"
+            "email": "developer.bantenprov@gmail.com",
+            "homepage": "http://dev.bantenprov",
+            "role": "Developer"
         }
     ],
     "require": {

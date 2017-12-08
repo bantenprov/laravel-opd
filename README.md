@@ -1,6 +1,10 @@
 # laravel OPD
+
+[![Join the chat at https://gitter.im/laravel-opd/Lobby](https://badges.gitter.im/laravel-opd/Lobby.svg)](https://gitter.im/laravel-opd/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Repository untuk membuat atau melakukan proses data Organisasi Perangkat Daerah
 
+# DEMO
+Demo for this package is available here [OPD](http://opd-01.dev.bantenprov.go.id/laravel-opd).  
 ## Install Laravel :
 ```bash
 $ composer create-project --prefer-dist laravel/laravel project-name "5.4.*"
