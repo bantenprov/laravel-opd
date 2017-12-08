@@ -1,6 +1,8 @@
 # laravel OPD
 
 [![Join the chat at https://gitter.im/laravel-opd/Lobby](https://badges.gitter.im/laravel-opd/Lobby.svg)](https://gitter.im/laravel-opd/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bantenprov/laravel-opd/badges/quality-score.png?format=flat)](https://scrutinizer-ci.com/g/bantenprov/laravel-opd)
+
 Repository untuk membuat atau melakukan proses data Organisasi Perangkat Daerah
 
 # DEMO
