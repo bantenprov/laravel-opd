@@ -34,35 +34,35 @@ class LaravelOpdController extends Controller
         
         $traverse($nodes);        
 
-        return view('laravel-opd::unit_kerja.index',compact('opds'));
+        return view('unit_kerja.index',compact('opds'));
         
     }
 
     public function createRoot()
     {
 
-        return view('laravel-opd::unit_kerja.create-root');
+        return view('unit_kerja.create-root');
     }
 
     public function createChild()
     {
         $unit_kerjas = LaravelOpdModel::all();
 
-        return view('laravel-opd::unit_kerja.create-child',compact('unit_kerjas'));
+        return view('unit_kerja.create-child',compact('unit_kerjas'));
     }
 
     public function addChild($id)
     {
         $unit_kerja = LaravelOpdModel::where('id',$id)->first();
 
-        return view('laravel-opd::unit_kerja.add-child',compact('unit_kerja'));
+        return view('unit_kerja.add-child',compact('unit_kerja'));
     }
     
     public function storeRoot(Request $request)
     {        
         $check_root = LaravelOpdModel::where('id',$request->root);
         
-        if($check_root->get()->isEmpty())
+        if($check_root->first()->isEmpty())
         {                        
 
             $unit_kerja = LaravelOpdModel::create([
