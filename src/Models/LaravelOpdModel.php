@@ -16,6 +16,7 @@ class LaravelOpdModel extends Model
 {
     use NodeTrait;
     use Uuids;
+    
 
     protected $table = "opd";
     protected $fillable = ['kunker','name','kunker_sinjab','kunker_simral','levelunker','njab','npej'];
