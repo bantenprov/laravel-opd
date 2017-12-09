@@ -92,6 +92,5 @@ Route::get('/opd', function () {
 
 ## [TODO](https://github.com/bantenprov/laravel-opd/blob/1.0/TODO.md) : 
 
-
 > Untuk keterangan lebih lanjut silahkan lihat di [halaman wiki](https://github.com/bantenprov/laravel-opd/blob/1.0/TODO.md). 
 > Untuk berdiskusi silahkan sampaikan saran, pertanyaan, atau keperluan teknis lainnya silahkan [disini](https://github.com/bantenprov/laravel-opd/wiki).
