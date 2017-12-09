@@ -1,4 +1,5 @@
-<?php namespace Bantenprov\LaravelOpd\Models;
+<?php 
+namespace Bantenprov\LaravelOpd\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Kalnoy\Nestedset\NodeTrait;
@@ -12,9 +13,8 @@ use Kalnoy\Nestedset\NodeTrait;
 class LaravelOpdModel extends Model
 {
     use NodeTrait;
-    
+
     protected $table = "ref_unkerjas";
-    protected $fillable = ['kunker','name','kunker_simral','levelunker'];
+    protected $fillable = ['kunker','name','kunker_sinjab','kunker_simral','levelunker'];
     protected $hidden = [];
 }
-

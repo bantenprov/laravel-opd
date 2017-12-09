@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Bantenprov\LaravelOpd;
 
@@ -13,9 +13,9 @@ use Illuminate\Http\Request;
 class LaravelOpd
 {
     protected $opd_model;
-    
+
     public function __construct()
-    {        
+    {
         $this->opd_model = new LaravelOpdModel();
     }
 
@@ -26,25 +26,25 @@ class LaravelOpd
 
     public function index()
     {
-        return $opds = LaravelOpdModel::all();                               
+        return $opds = LaravelOpdModel::all();
 
         //return view('unit_kerja.index',compact('opds'));
-        
+
     }
 
     public function tree()
     {
         $nodes = LaravelOpdModel::get()->toTree();
-        
+
         $traverse = function ($categories, $prefix = '-') use (&$traverse) {
             foreach ($categories as $category) {
                 echo $prefix.' '.$category->kunker.' - '.$category->name.'<br>';
-        
+
                 $traverse($category->children, $prefix.'-');
             }
         };
-        
-        return $traverse($nodes); 
+
+        return $traverse($nodes);
     }
 
     public function createRoot()
@@ -66,16 +66,16 @@ class LaravelOpd
 
         //return view('unit_kerja.add-child',compact('unit_kerja'));
     }
-    
-    public function storeRoot($request = array())
-    {        
-        $check_root = LaravelOpdModel::where('id',$request->root);
-        
-        if($check_root->first()->isEmpty())
-        {                        
 
+    public function storeRoot($request = array())
+    {
+        $check_root = LaravelOpdModel::where('id',$request->root);
+
+        if($check_root->first()->isEmpty())
+        {
             $unit_kerja = LaravelOpdModel::create([
                 'kunker' => $request->kunker,
+                'kunker_sinjab' => '',
                 'kunker_simral' => '',
                 'name' => $request->name,
                 'levelunker' => $request->levelunker,
@@ -86,22 +86,20 @@ class LaravelOpd
             return redirect()->back();
         }
 
-        
-
         return redirect()->back();
     }
 
     public function storeChild($request = array())
     {
         $check_root = LaravelOpdModel::where('id',$request->root);
-                          
+
             $check_root->first()->children()->create([
                 'kunker' => $request->c_kunker,
+                'kunker_sinjab' => '',
                 'kunker_simral' => '',
                 'name' => $request->c_name,
                 'levelunker' => $request->c_levelunker,
-            ]);        
-
+            ]);
         return redirect()->back();
     }
 }

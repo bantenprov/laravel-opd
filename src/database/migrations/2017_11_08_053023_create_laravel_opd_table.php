@@ -14,16 +14,15 @@ class CreateLaravelOpdTable extends Migration
      */
     public function up()
     {
-        
-
-        Schema::create('ref_unkerjas', function (Blueprint $table) {            
+        Schema::create('ref_unkerjas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('kunker',191)->index();
             $table->string('name',191);
+            $table->string('kunker_sinjab',191)->nullable();
             $table->string('kunker_simral',191)->nullable();
             $table->integer('levelunker');
             NestedSet::columns($table);
-            $table->timestamps();            
+            $table->timestamps();
         });
     }
 

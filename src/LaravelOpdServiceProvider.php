@@ -1,4 +1,5 @@
-<?php namespace Bantenprov\LaravelOpd;
+<?php
+namespace Bantenprov\LaravelOpd;
 
 use Illuminate\Support\ServiceProvider;
 use Bantenprov\LaravelOpd\Console\Commands\LaravelOpdCommand;
