@@ -1,4 +1,5 @@
-<?php namespace Bantenprov\LaravelOpd;
+<?php
+namespace Bantenprov\LaravelOpd;
 
 use Illuminate\Support\ServiceProvider;
 use Bantenprov\LaravelOpd\Console\Commands\LaravelOpdCommand;
@@ -148,7 +149,7 @@ class LaravelOpdServiceProvider extends ServiceProvider
     {
         $packageMigrationsPath = __DIR__.'/database/migrations';
 
-        $this->loadMigrationsFrom($packageMigrationsPath);
+        //$this->loadMigrationsFrom($packageMigrationsPath);
 
         $this->publishes([
             $packageMigrationsPath => database_path('migrations')
