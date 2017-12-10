@@ -1,4 +1,5 @@
-<?php namespace Bantenprov\LaravelOpd\Http\Controllers;
+<?php
+namespace Bantenprov\LaravelOpd\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -20,19 +21,21 @@ class LaravelOpdController extends Controller
 
     public function index()
     {
+
         $opds = LaravelOpdModel::orderBy('kunker','asc')->get();                
 
         $nodes = LaravelOpdModel::get()->toTree();
-        
+
         $traverse = function ($categories, $prefix = '-') use (&$traverse) {
             foreach ($categories as $category) {
                 echo $prefix.' '.$category->kunker.' - '.$category->name.'<br>';
-        
+
                 $traverse($category->children, $prefix.'-');
             }
         };
-        
-        $traverse($nodes);        
+
+        $traverse($nodes);
+
 
         return view('laravel-opd::unit_kerja.index',compact('opds'));
         
@@ -57,16 +60,16 @@ class LaravelOpdController extends Controller
 
         return view('laravel-opd::unit_kerja.add-child',compact('unit_kerja'));
     }
-    
-    public function storeRoot(Request $request)
-    {        
-        $check_root = LaravelOpdModel::where('id',$request->root);
-        
-        if($check_root->get()->isEmpty())
-        {                        
 
+    public function storeRoot(Request $request)
+    {
+        $check_root = LaravelOpdModel::where('id',$request->root);
+
+        if($check_root->get()->isEmpty())
+        {
             $unit_kerja = LaravelOpdModel::create([
                 'kunker' => $request->kunker,
+                'kunker_sinjab' => '',
                 'kunker_simral' => '',
                 'kunker_sinjab' => '',
                 'name' => $request->name,
@@ -80,15 +83,13 @@ class LaravelOpdController extends Controller
             return redirect()->back();
         }
 
-        
-
         return redirect()->back();
     }
 
     public function storeChild(Request $request)
     {
         $check_root = LaravelOpdModel::where('id',$request->root);
-                          
+
             $check_root->first()->children()->create([
                 'kunker' => $request->c_kunker,
                 'kunker_simral' => '',
@@ -97,7 +98,7 @@ class LaravelOpdController extends Controller
                 'levelunker' => $request->c_levelunker,
                 'njab' => $request->c_njab,
                 'npej' => $request->c_npej
-            ]);        
+            ]);
 
         return redirect()->back();
     }
