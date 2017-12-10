@@ -39,10 +39,25 @@
             </td>            
         </tr>    
         <tr>
+            <td>Nama Jabatan</td>
+            <td>:</td>
+            <td><input type="text" name="c_njab"></td>            
+        </tr>
+        <tr>
+            <td>Nama Pejabat</td>
+            <td>:</td>
+            <td><input type="text" name="c_npej"></td>            
+        </tr>
+        <tr>
             <td>Kode Unit Kerja Simral</td>
             <td>:</td>
             <td><input type="text" name="c_kunker_simral"></td>            
         </tr>
+        <tr>
+            <td>Kode Unit Kerja Sinjab</td>
+            <td>:</td>
+            <td><input type="text" name="c_kunker_sinjab"></td>            
+        </tr> 
 
     </table>
     

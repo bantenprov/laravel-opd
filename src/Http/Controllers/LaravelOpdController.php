@@ -68,8 +68,11 @@ class LaravelOpdController extends Controller
             $unit_kerja = LaravelOpdModel::create([
                 'kunker' => $request->kunker,
                 'kunker_simral' => '',
+                'kunker_sinjab' => '',
                 'name' => $request->name,
                 'levelunker' => $request->levelunker,
+                'njab' => $request->njab,
+                'npej' => $request->npej
             ]);
         }
         else
@@ -89,8 +92,11 @@ class LaravelOpdController extends Controller
             $check_root->first()->children()->create([
                 'kunker' => $request->c_kunker,
                 'kunker_simral' => '',
+                'kunker_sinjab' => '',
                 'name' => $request->c_name,
                 'levelunker' => $request->c_levelunker,
+                'njab' => $request->c_njab,
+                'npej' => $request->c_npej
             ]);        
 
         return redirect()->back();
