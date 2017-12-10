@@ -1,4 +1,6 @@
-<?php namespace Bantenprov\LaravelOpd\Http\Middleware;
+<?php 
+
+namespace Bantenprov\LaravelOpd\Http\Middleware;
 
 use Closure;
 

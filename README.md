@@ -1,6 +1,10 @@
 # laravel OPD
 
 [![Join the chat at https://gitter.im/laravel-opd/Lobby](https://badges.gitter.im/laravel-opd/Lobby.svg)](https://gitter.im/laravel-opd/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bantenprov/laravel-opd/badges/quality-score.png?format=flat)](https://scrutinizer-ci.com/g/bantenprov/laravel-opd)
+[![Build Status](https://scrutinizer-ci.com/g/bantenprov/laravel-opd/badges/build.png?b=1.0)](https://scrutinizer-ci.com/g/bantenprov/laravel-opd/build-status/1.0)
+[![Total Downloads](https://poser.pugx.org/bantenprov/laravel-opd/downloads)](https://packagist.org/packages/bantenprov/laravel-opd)
+
 Repository untuk membuat atau melakukan proses data Organisasi Perangkat Daerah
 
 # DEMO
@@ -92,7 +96,6 @@ Route::get('/opd', function () {
 ```
 
 ## [TODO](https://github.com/bantenprov/laravel-opd/blob/1.0/TODO.md) : 
-
 
 > Untuk keterangan lebih lanjut silahkan lihat di [halaman wiki](https://github.com/bantenprov/laravel-opd/blob/1.0/TODO.md). 
 > Untuk berdiskusi silahkan sampaikan saran, pertanyaan, atau keperluan teknis lainnya silahkan [disini](https://github.com/bantenprov/laravel-opd/wiki).
