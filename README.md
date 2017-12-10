@@ -1,6 +1,10 @@
 # laravel OPD
+
+[![Join the chat at https://gitter.im/laravel-opd/Lobby](https://badges.gitter.im/laravel-opd/Lobby.svg)](https://gitter.im/laravel-opd/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Repository untuk membuat atau melakukan proses data Organisasi Perangkat Daerah
 
+# DEMO
+Demo for this package is available here [OPD](http://opd-01.dev.bantenprov.go.id/laravel-opd).  
 ## Install Laravel :
 ```bash
 $ composer create-project --prefer-dist laravel/laravel project-name "5.4.*"
@@ -9,7 +13,9 @@ $ composer create-project --prefer-dist laravel/laravel project-name "5.4.*"
 ## Install package :
 
 ```bash
-$ composer require bantenprov/laravel-opd "1.0.0"
+
+$ composer require bantenprov/laravel-opd "1.0.1"
+
 ```
 
 ## Edit config/app.php
@@ -23,7 +29,9 @@ $ composer require bantenprov/laravel-opd "1.0.0"
     App\Providers\EventServiceProvider::class,
     App\Providers\RouteServiceProvider::class,
     ...
+    
     Bantenprov\LaravelOpd\LaravelOpdServiceProvider::class,
+    Emadadly\LaravelUuid\LaravelUuidServiceProvider::class,
 ```
 
 ### aliases
@@ -41,8 +49,8 @@ $ composer require bantenprov/laravel-opd "1.0.0"
 ## Artisan command :
 
 ```bash
-$ php artisan vendor:publish --tag=migration
-$ php artisan vendor:publish --tag=view
+$ php artisan vendor:publish --tag=migrations
+$ php artisan vendor:publish --tag=views
 ```
 
 ## Contoh pengunaan :

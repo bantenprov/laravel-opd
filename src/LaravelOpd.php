@@ -26,7 +26,7 @@ class LaravelOpd
 
     public function index()
     {
-        return $opds = LaravelOpdModel::all();                               
+        return $opds = LaravelOpdModel::orderBy('kunker','asc')->get();                
 
         //return view('unit_kerja.index',compact('opds'));
         
@@ -38,7 +38,7 @@ class LaravelOpd
         
         $traverse = function ($categories, $prefix = '-') use (&$traverse) {
             foreach ($categories as $category) {
-                echo $prefix.' '.$category->kunker.' - '.$category->name.'<br>';
+                echo $prefix.' '.$category->kunker.' - '.$category->name.' - ['.$category->npej.']<br>';
         
                 $traverse($category->children, $prefix.'-');
             }
@@ -77,8 +77,11 @@ class LaravelOpd
             $unit_kerja = LaravelOpdModel::create([
                 'kunker' => $request->kunker,
                 'kunker_simral' => '',
+                'kunker_sinjab' => '',
                 'name' => $request->name,
                 'levelunker' => $request->levelunker,
+                'npej' => $request->npej,
+                'njab' => $request->njab
             ]);
         }
         else
