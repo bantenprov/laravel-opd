@@ -5,7 +5,8 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use Kalnoy\Nestedset\NestedSet;
 
-class CreateTableOpd extends Migration
+
+class CreateLaravelOpdTable extends Migration
 {
     /**
      * Run the migrations.
