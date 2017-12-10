@@ -13,7 +13,7 @@ $ composer create-project --prefer-dist laravel/laravel project-name "5.4.*"
 ## Install package :
 
 ```bash
-$ composer require bantenprov/laravel-opd "1.0.0"
+$ composer require bantenprov/laravel-opd "1.0.1"
 ```
 
 ## Edit config/app.php
@@ -27,7 +27,9 @@ $ composer require bantenprov/laravel-opd "1.0.0"
     App\Providers\EventServiceProvider::class,
     App\Providers\RouteServiceProvider::class,
     ...
+    
     Bantenprov\LaravelOpd\LaravelOpdServiceProvider::class,
+    Emadadly\LaravelUuid\LaravelUuidServiceProvider::class,
 ```
 
 ### aliases
