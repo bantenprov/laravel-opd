@@ -55,8 +55,59 @@ $ composer require bantenprov/laravel-opd "1.0.1"
 ```bash
 $ php artisan vendor:publish --tag=migrations
 $ php artisan vendor:publish --tag=views
+$ php artisan vendor:publish --provider="Emadadly\LaravelUuid\LaravelUuidServiceProvider"
 ```
 
+### Edit config/uuid.php
+Change `'default_uuid_column' => 'uuid'` to `'default_uuid_column' => 'id'`
+```php
+'default_uuid_column' => 'id',
+```
+
+### Edit "vendor/kalnoy/nestedset/src/NestedSet.php"
+Change `$table->unsignedInteger(self::PARENT_ID)->nullable();` to `$table->string(self::PARENT_ID)->nullable();`
+```php
+public static function columns(Blueprint $table)
+{
+    $table->unsignedInteger(self::LFT)->default(0);
+    $table->unsignedInteger(self::RGT)->default(0);
+    $table->string(self::PARENT_ID)->nullable();
+
+    $table->index(static::getDefaultColumns());
+}
+```
+
+## Run artisan command :
+
+```bash
+$ php artisan migrate
+```
+
+## Check route list
+run artisan command -> `$ php artisan route:list`
+
+## Add to routes/web.php
+```php
+//web.php
+Route::get('/opd/tree', function () {
+    return Opd::tree();
+})->name('opd.tree');
+
+Route::get('/opd', function () {
+    $opds =  Opd::index();
+    return view('laravel-opd::unit_kerja.index',compact('opds'));
+})->name('opd.index');
+
+Route::get('/opd/create-root',function(){
+    return view('laravel-opd::unit_kerja.create-root');
+})->name('opd.create_root');
+
+Route::get('/opd/create-child',function(){
+    $unit_kerjas =  Opd::index();
+  
+    return view('laravel-opd::unit_kerja.create-child',compact('unit_kerjas'));
+})->name('opd.create_child');
+```
 ## Contoh pengunaan :
 
 ### 1.
