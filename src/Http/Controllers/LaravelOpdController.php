@@ -65,7 +65,6 @@ class LaravelOpdController extends Controller
 
         if($check_root->get()->isEmpty())
         {
-
             $unit_kerja = LaravelOpdModel::create([
                 'kunker' => $request->kunker,
                 'kunker_sinjab' => '',
@@ -95,13 +94,9 @@ class LaravelOpdController extends Controller
                 'kunker_sinjab' => '',
                 'name' => $request->c_name,
                 'levelunker' => $request->c_levelunker,
-<<<<<<< HEAD
                 'njab' => $request->c_njab,
                 'npej' => $request->c_npej
-            ]);        
-=======
             ]);
->>>>>>> add sinjab
 
         return redirect()->back();
     }
