@@ -6,6 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 use Kalnoy\Nestedset\NestedSet;
 
 
+
 class CreateLaravelOpdTable extends Migration
 {
     /**
