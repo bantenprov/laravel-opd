@@ -1,24 +1,31 @@
 # Laravel OPD
 
-[![Join the chat at https://gitter.im/laravel-opd/Lobby](https://badges.gitter.im/laravel-opd/Lobby.svg)](https://gitter.im/laravel-opd/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bantenprov/laravel-opd/badges/quality-score.png?format=flat)](https://scrutinizer-ci.com/g/bantenprov/laravel-opd)
-[![Build Status](https://scrutinizer-ci.com/g/bantenprov/laravel-opd/badges/build.png?b=1.0)](https://scrutinizer-ci.com/g/bantenprov/laravel-opd/build-status/1.0)
+[![Join the chat at https://gitter.im/laravel-opd](https://badges.gitter.im/laravel-opd.svg)](https://gitter.im/laravel-opd?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bantenprov/laravel-opd/badges/quality-score.png?b=1.1)](https://scrutinizer-ci.com/g/bantenprov/laravel-opd/?branch=1.1)
+[![Build Status](https://scrutinizer-ci.com/g/bantenprov/laravel-opd/badges/build.png?b=1.1)](https://scrutinizer-ci.com/g/bantenprov/laravel-opd/build-status/master)
+[![Latest Stable Version](https://poser.pugx.org/bantenprov/laravel-opd/v/stable)](https://packagist.org/packages/bantenprov/laravel-opd)
 [![Total Downloads](https://poser.pugx.org/bantenprov/laravel-opd/downloads)](https://packagist.org/packages/bantenprov/laravel-opd)
+[![Latest Unstable Version](https://poser.pugx.org/bantenprov/laravel-opd/v/unstable)](https://packagist.org/packages/bantenprov/laravel-opd)
+[![License](https://poser.pugx.org/bantenprov/laravel-opd/license)](https://packagist.org/packages/bantenprov/laravel-opd)
+[![Monthly Downloads](https://poser.pugx.org/bantenprov/laravel-opd/d/monthly)](https://packagist.org/packages/bantenprov/laravel-opd)
+[![Daily Downloads](https://poser.pugx.org/bantenprov/laravel-opd/d/daily)](https://packagist.org/packages/bantenprov/laravel-opd)
+
+## Laravel OPD
 
 Repository untuk membuat atau melakukan proses data Organisasi Perangkat Daerah
 
-# DEMO
+### DEMO
 Demo for this package is available here [OPD](http://opd-01.dev.bantenprov.go.id/laravel-opd).  
-## Install Laravel :
+### Install Laravel :
 ```bash
 $ composer create-project --prefer-dist laravel/laravel project-name "5.4.*"
 ```
 
-## Install package :
+### Install package :
 
 ```bash
 
-$ composer require bantenprov/laravel-opd "1.0.1"
+$ composer require bantenprov/laravel-opd:1.1.x-dev
 
 ```
 
