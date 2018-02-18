@@ -1,8 +1,8 @@
 # laravel-opd
 
 [![Join the chat at https://gitter.im/laravel-opd](https://badges.gitter.im/laravel-opd.svg)](https://gitter.im/laravel-opd?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bantenprov/laravel-opd/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/bantenprov/laravel-opd/?branch=master)
-[![Build Status](https://scrutinizer-ci.com/g/bantenprov/laravel-opd/badges/build.png?b=master)](https://scrutinizer-ci.com/g/bantenprov/laravel-opd/build-status/master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bantenprov/laravel-opd/badges/quality-score.png?b=1.1)](https://scrutinizer-ci.com/g/bantenprov/laravel-opd/?branch=1.1)
+[![Build Status](https://scrutinizer-ci.com/g/bantenprov/laravel-opd/badges/build.png?b=1.1)](https://scrutinizer-ci.com/g/bantenprov/laravel-opd/build-status/master)
 [![Latest Stable Version](https://poser.pugx.org/bantenprov/laravel-opd/v/stable)](https://packagist.org/packages/bantenprov/laravel-opd)
 [![Total Downloads](https://poser.pugx.org/bantenprov/laravel-opd/downloads)](https://packagist.org/packages/bantenprov/laravel-opd)
 [![Latest Unstable Version](https://poser.pugx.org/bantenprov/laravel-opd/v/unstable)](https://packagist.org/packages/bantenprov/laravel-opd)
