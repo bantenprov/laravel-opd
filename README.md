@@ -14,14 +14,14 @@
 
 Repository untuk membuat atau melakukan proses data Organisasi Perangkat Daerah
 
-## DEMO
+### DEMO
 Demo for this package is available here [OPD](http://opd-01.dev.bantenprov.go.id/laravel-opd).  
-## Install Laravel :
+### Install Laravel :
 ```bash
 $ composer create-project --prefer-dist laravel/laravel project-name "5.4.*"
 ```
 
-## Install package :
+### Install package :
 
 ```bash
 
