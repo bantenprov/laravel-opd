@@ -25,11 +25,13 @@ $ composer create-project --prefer-dist laravel/laravel project-name "5.4.*"
 
 ```bash
 
-$ composer require bantenprov/laravel-opd "1.0.1"
+$ composer require bantenprov/laravel-opd:dev-master
 
 ```
 
 ## Edit config/app.php
+
+### If you use laravel 5.4
 #### providers
 
 ```php
