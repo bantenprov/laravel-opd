@@ -1,13 +1,20 @@
-# laravel OPD
+# laravel-opd
 
-[![Join the chat at https://gitter.im/laravel-opd/Lobby](https://badges.gitter.im/laravel-opd/Lobby.svg)](https://gitter.im/laravel-opd/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bantenprov/laravel-opd/badges/quality-score.png?format=flat)](https://scrutinizer-ci.com/g/bantenprov/laravel-opd)
-[![Build Status](https://scrutinizer-ci.com/g/bantenprov/laravel-opd/badges/build.png?b=1.0)](https://scrutinizer-ci.com/g/bantenprov/laravel-opd/build-status/1.0)
+[![Join the chat at https://gitter.im/laravel-opd](https://badges.gitter.im/laravel-opd.svg)](https://gitter.im/laravel-opd?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bantenprov/laravel-opd/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/bantenprov/laravel-opd/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/bantenprov/laravel-opd/badges/build.png?b=master)](https://scrutinizer-ci.com/g/bantenprov/laravel-opd/build-status/master)
+[![Latest Stable Version](https://poser.pugx.org/bantenprov/laravel-opd/v/stable)](https://packagist.org/packages/bantenprov/laravel-opd)
 [![Total Downloads](https://poser.pugx.org/bantenprov/laravel-opd/downloads)](https://packagist.org/packages/bantenprov/laravel-opd)
+[![Latest Unstable Version](https://poser.pugx.org/bantenprov/laravel-opd/v/unstable)](https://packagist.org/packages/bantenprov/laravel-opd)
+[![License](https://poser.pugx.org/bantenprov/laravel-opd/license)](https://packagist.org/packages/bantenprov/laravel-opd)
+[![Monthly Downloads](https://poser.pugx.org/bantenprov/laravel-opd/d/monthly)](https://packagist.org/packages/bantenprov/laravel-opd)
+[![Daily Downloads](https://poser.pugx.org/bantenprov/laravel-opd/d/daily)](https://packagist.org/packages/bantenprov/laravel-opd)
+
+## Laravel OPD
 
 Repository untuk membuat atau melakukan proses data Organisasi Perangkat Daerah
 
-# DEMO
+## DEMO
 Demo for this package is available here [OPD](http://opd-01.dev.bantenprov.go.id/laravel-opd).  
 ## Install Laravel :
 ```bash
@@ -55,8 +62,59 @@ $ composer require bantenprov/laravel-opd "1.0.1"
 ```bash
 $ php artisan vendor:publish --tag=migrations
 $ php artisan vendor:publish --tag=views
+$ php artisan vendor:publish --provider="Emadadly\LaravelUuid\LaravelUuidServiceProvider"
 ```
 
+### Edit config/uuid.php
+Change `'default_uuid_column' => 'uuid'` to `'default_uuid_column' => 'id'`
+```php
+'default_uuid_column' => 'id',
+```
+
+### Edit "vendor/kalnoy/nestedset/src/NestedSet.php"
+Change `$table->unsignedInteger(self::PARENT_ID)->nullable();` to `$table->string(self::PARENT_ID)->nullable();`
+```php
+public static function columns(Blueprint $table)
+{
+    $table->unsignedInteger(self::LFT)->default(0);
+    $table->unsignedInteger(self::RGT)->default(0);
+    $table->string(self::PARENT_ID)->nullable();
+
+    $table->index(static::getDefaultColumns());
+}
+```
+
+## Run artisan command :
+
+```bash
+$ php artisan migrate
+```
+
+## Check route list
+run artisan command -> `$ php artisan route:list`
+
+## Add to routes/web.php
+```php
+//web.php
+Route::get('/opd/tree', function () {
+    return Opd::tree();
+})->name('opd.tree');
+
+Route::get('/opd', function () {
+    $opds =  Opd::index();
+    return view('laravel-opd::unit_kerja.index',compact('opds'));
+})->name('opd.index');
+
+Route::get('/opd/create-root',function(){
+    return view('laravel-opd::unit_kerja.create-root');
+})->name('opd.create_root');
+
+Route::get('/opd/create-child',function(){
+    $unit_kerjas =  Opd::index();
+  
+    return view('laravel-opd::unit_kerja.create-child',compact('unit_kerjas'));
+})->name('opd.create_child');
+```
 ## Contoh pengunaan :
 
 ### 1.
