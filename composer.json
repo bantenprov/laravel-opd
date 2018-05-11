@@ -13,9 +13,9 @@
     ],
     "require": {
         "php": ">=5.6.4",
-        "illuminate/support": "5.4.*",
+        "illuminate/support": "5.4.*|5.5.*",
         "kalnoy/nestedset": "^4.3",
-        "emadadly/laravel-uuid": "^1.2"
+        "emadadly/laravel-uuid": "1.*"
     },
     "autoload": {
         "files": [
@@ -23,6 +23,16 @@
         ],
         "psr-4": {
             "Bantenprov\\LaravelOpd\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Bantenprov\\LaravelOpd\\LaravelOpdServiceProvider"
+            ],
+            "aliases": {
+                "Opd": "Bantenprov\\LaravelOpd\\Facades\\LaravelOpd"
+            }
         }
     },
     "minimum-stability": "stable"
