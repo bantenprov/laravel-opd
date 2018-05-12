@@ -1,21 +1,71 @@
-<table border='1'>
+@extends('master')
+@section('content')
+@if (Session::has('message'))
+  <div class="alert alert-info">{{ Session::get('message') }}</div>
+@endif
 
-    <tr>
-        <td>Kode</td>
-        <td>Unit Kerja</td>
-        <td>Level</td>
-        <td>Action</td>
-    </tr>
-    @foreach($opds as $opd)
-        <tr>
-            <td>{{$opd->kunker}}</td>                
-            <td>{{$opd->name}}</td>
-            <td>{{$opd->levelunker}}</td>
-            <td>
-                <a href="{{ route('addChild',$opd->id)}}"> Add child </a>
-            </td>
-        </tr>
-    @endforeach
+<div class="container-fluid">
+  <div class="animated fadeIn">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-header">
+            <i class="fa fa-align-justify"></i> Daftar OPD
+            <a href="{{ route('opd.create_root') }}" class="float-right">
+              <button type="button" class="btn btn-warning">Add root</button>
+            </a>&nbsp;
+          </div>
+          <div class="card-body">
+            <table class="table table-responsive-sm table-bordered table-striped table-sm">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Kode</th>
+                  <th scope="col">Unit Kerja</th>
+                  <th scope="col">Level</th>
+                  <th scope="col">Created At</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+
+              @foreach($opds as $opd)
+              <tr>
+                <td>{{$opd->id}}</td>
+                <td>{{$opd->kunker}}</td>
+                <td>{{$opd->name}}</td>
+                <td>{{$opd->levelunker}}</td>
+                <td>{{$opd->created_at}}</td>
+                <td>
+                  <a href="{{ route('addChild',$opd->id) }}">
+                    <button type="button" class="btn btn-warning">Add child</button>
+                  </a>&nbsp;
+                  <a href="{{ route('addChild',$opd->id) }}">
+                    <button type="button" class="btn btn-danger">Delete</button>
+                  </a>&nbsp;
+                </td>
+              </tr>
+              @endforeach
 
 
-</table>
+            </table>
+
+            <nav>
+              <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+            </nav>
+          </div><!--/.card-header-->
+        </div><!--/.card-->
+      </div><!--/.col-->
+    </div><!--/.row-->
+  </div>
+</div>
+
+@endsection
