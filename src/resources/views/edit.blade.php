@@ -37,7 +37,7 @@
                 <input type="text" name="name" class="form-control" id="name" placeholder="Enter Nama Unit Kerja" value="{{$opd->name}}">
               </div>
 
-              <div class="form-group">
+              {{-- <div class="form-group">
                 <label for="levelunker">Level Unit Kerja</label>
                 <select id="levelunker" name="levelunker" class="form-control form-control-lg">
                   <option value="0">Please select</option>
@@ -47,7 +47,7 @@
                   <option value="4" {{ ($opd->levelunker == 4) ? 'selected' : '' }}>4</option>
                   <option value="5" {{ ($opd->levelunker == 5) ? 'selected' : '' }}>5</option>
                 </select>
-              </div>
+              </div> --}}
 
               <div class="form-group">
                 <label for="njab">Nama Jabatan</label>

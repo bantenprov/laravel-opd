@@ -1,6 +1,14 @@
 @extends('master')
 @section('content')
-
+@if ($errors->any())
+<div class="alert alert-danger">
+  <ul>
+    @foreach ($errors->all() as $error)
+    <li>{{ $error }}</li>
+    @endforeach
+  </ul>
+</div>
+@endif
 <div class="container-fluid">
   <div class="animated fadeIn">
     <div class="row">
@@ -52,7 +60,7 @@
                 <input type="text" name="kunker_sinjab" class="form-control" id="kunker_sinjab" placeholder="Enter Kode Unit Kerja Sinjab">
               </div>
 
-              <hr />
+              <hr />              
               <button type="submit" class="btn btn-primary">Submit</button>
 
               {{ csrf_field() }}

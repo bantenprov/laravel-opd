@@ -63,6 +63,14 @@ class LaravelOpdController extends Controller
 
     public function storeRoot(Request $request)
     {
+        $request->validate([
+            'kunker'            => 'required',
+            'leveunker'         => 'required',
+            'name'              => 'required',
+            'njab'              => 'required',
+            'npej'              => 'required',
+        ]);
+
         $check_root = LaravelOpdModel::where('id',$request->root);
 
         if($check_root->get()->isEmpty())
@@ -88,16 +96,23 @@ class LaravelOpdController extends Controller
 
     public function storeChild(Request $request)
     {
+        $request->validate([
+            'kunker'            => 'required',
+            'name'              => 'required',
+            'njab'              => 'required',
+            'npej'              => 'required',
+        ]);
+
         $check_root = LaravelOpdModel::where('id',$request->root);
 
             $check_root->first()->children()->create([
-                'kunker' => $request->c_kunker,
-                'kunker_simral' => '',
-                'kunker_sinjab' => '',
-                'name' => $request->c_name,
-                'levelunker' => $request->c_levelunker,
-                'njab' => $request->c_njab,
-                'npej' => $request->c_npej
+                'kunker'            => $request->c_kunker,
+                'kunker_simral'     => '',
+                'kunker_sinjab'     => '',
+                'name'              => $request->c_name,
+                'levelunker'        => $check_root->first()->levelunker + 1,
+                'njab'              => $request->c_njab,
+                'npej'              => $request->c_npej
             ]);
 
         return redirect()->back();
@@ -116,8 +131,8 @@ class LaravelOpdController extends Controller
             'kunker'            => 'required',
             'name'              => 'required',
             /* 'kunker_sinjab'     => 'required',
-            'kunker_simral'     => 'required', */
-            'levelunker'        => 'required',
+            // 'kunker_simral'     => 'required', */
+            // 'levelunker'        => 'required',
             'njab'              => 'required',
             'npej'              => 'required',
         ]);
@@ -127,7 +142,7 @@ class LaravelOpdController extends Controller
             'name'              => $request->name  ? $request->name : '',
             /* 'kunker_sinjab'     => $request->kunker_sinjab,
             'kunker_simral'     => $request->kunker_simral', */
-            'levelunker'        => $request->levelunker  ? $request->levelunker : '',
+            // 'levelunker'        => $request->levelunker  ? $request->levelunker : '',
             'njab'              => $request->njab  ? $request->njab : '',
             'npej'              => $request->npej  ? $request->npej : '',
         ]);
