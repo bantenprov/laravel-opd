@@ -4,7 +4,6 @@ Route::group(['prefix' => 'opd','middleware' => ['web']], function() {
 
     Route::get('', 'Bantenprov\LaravelOpd\Http\Controllers\LaravelOpdController@index')->name('opd.index');
     Route::get('create-root', 'Bantenprov\LaravelOpd\Http\Controllers\LaravelOpdController@createRoot')->name('opd.create.root');
-    Route::get('create-child', 'Bantenprov\LaravelOpd\Http\Controllers\LaravelOpdController@createChild')->name('opd.create.child');
     
     Route::post('create-root', 'Bantenprov\LaravelOpd\Http\Controllers\LaravelOpdController@storeRoot')->name('opd.store.root');
     Route::post('create-child', 'Bantenprov\LaravelOpd\Http\Controllers\LaravelOpdController@storeChild')->name('opd.store.child');

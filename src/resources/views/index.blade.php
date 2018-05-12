@@ -42,9 +42,6 @@
                   <a href="{{ route('opd.edit',$opd->id) }}">
                     <button type="button" class="btn btn-success">Edit</button>
                   </a>
-                  {{-- <a href="{{ route('opd.create.root',$opd->id) }}">
-                    <button type="button" class="btn btn-danger">Delete</button>
-                  </a>&nbsp; --}}
                 </td>
               </tr>
               @endforeach
