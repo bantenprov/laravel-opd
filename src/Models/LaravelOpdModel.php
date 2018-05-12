@@ -19,7 +19,15 @@ class LaravelOpdModel extends Model
     
 
     protected $table = "opd";
-    protected $fillable = ['kunker','name','kunker_sinjab','kunker_simral','levelunker','njab','npej'];
+    protected $fillable = [
+            'kunker',
+            'name',
+            'kunker_sinjab',
+            'kunker_simral',
+            'levelunker',
+            'njab',
+            'npej'
+    ];
     protected $hidden = [];
     public $incrementing = false;
 }
