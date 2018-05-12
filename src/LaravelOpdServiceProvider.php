@@ -106,7 +106,7 @@ class LaravelOpdServiceProvider extends ServiceProvider
         $this->loadTranslationsFrom($packageTranslationsPath, 'laravel-opd');
 
         $this->publishes([
-            $packageTranslationsPath => resource_path('lang/vendor/laravel-opd'),
+            $packageTranslationsPath => resource_path('lang/bantenprov/laravel-opd'),
         ], 'lang');
     }
 
@@ -122,8 +122,8 @@ class LaravelOpdServiceProvider extends ServiceProvider
         $this->loadViewsFrom($packageViewsPath, 'laravel-opd');
 
         $this->publishes([
-            $packageViewsPath => resource_path('views/vendor/laravel-opd'),
-        ], 'views');
+            $packageViewsPath => resource_path('views/bantenprov/laravel-opd'),
+        ], 'laravel-opd-views');
     }
 
     /**
@@ -136,7 +136,7 @@ class LaravelOpdServiceProvider extends ServiceProvider
         $packageAssetsPath = __DIR__.'/resources/assets';
 
         $this->publishes([
-            $packageAssetsPath => public_path('vendor/laravel-opd'),
+            $packageAssetsPath => public_path('bantenprov/laravel-opd'),
         ], 'public');
     }
 

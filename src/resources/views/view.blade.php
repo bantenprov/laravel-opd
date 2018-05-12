@@ -1,1 +1,0 @@
-This is demo view file for Bantenprov\LaravelOpd package using blade template

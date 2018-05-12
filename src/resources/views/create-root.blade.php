@@ -1,4 +1,3 @@
-
 @extends('master')
 @section('content')
 
@@ -14,7 +13,7 @@
           </div>
           <div class="card-body">
 
-            <form action="{{route('storeRoot')}}" method="post">
+            <form action="{{route('opd.store.root')}}" method="post">
               <div class="form-group">
                 <label for="company">Kode Unit Kerja</label>
                 <input type="text" name="kunker" class="form-control" id="kunker" placeholder="Enter Kode Unit Kerja">
