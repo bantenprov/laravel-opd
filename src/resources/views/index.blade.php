@@ -36,7 +36,7 @@
                 <td>{{$opd->levelunker}}</td>
                 <td>{{$opd->created_at->toFormattedDateString()}}</td>
                 <td>
-                  <a href="{{ route('opd.create.child',$opd->id) }}">
+                  <a href="{{ route('opd.add.child',$opd->id) }}">
                     <button type="button" class="btn btn-warning">Add child</button>
                   </a>
                   <a href="{{ route('opd.edit',$opd->id) }}">
