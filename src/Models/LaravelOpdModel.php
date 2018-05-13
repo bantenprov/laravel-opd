@@ -4,7 +4,6 @@ namespace Bantenprov\LaravelOpd\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Kalnoy\Nestedset\NodeTrait;
-use Emadadly\LaravelUuid\Uuids;
 
 /**
  * The LaravelOpdModel class.
@@ -15,11 +14,12 @@ use Emadadly\LaravelUuid\Uuids;
 class LaravelOpdModel extends Model
 {
     use NodeTrait;
-    use Uuids;
     
 
     protected $table = "opd";
+
     protected $fillable = [
+            'uuid',
             'kunker',
             'name',
             'kunker_sinjab',
@@ -29,6 +29,6 @@ class LaravelOpdModel extends Model
             'npej'
     ];
     protected $hidden = [];
-    public $incrementing = false;
+    
 }
 

@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Bantenprov\LaravelOpd\Facades\LaravelOpd;
 use Bantenprov\LaravelOpd\Models\LaravelOpdModel;
+use Ramsey\Uuid\Uuid;
 
 /**
  * The LaravelOpdController class.
@@ -65,7 +66,7 @@ class LaravelOpdController extends Controller
     {
         $request->validate([
             'kunker'            => 'required',
-            'leveunker'         => 'required',
+            'levelunker'        => 'required',
             'name'              => 'required',
             'njab'              => 'required',
             'npej'              => 'required',
@@ -76,14 +77,15 @@ class LaravelOpdController extends Controller
         if($check_root->get()->isEmpty())
         {
             $unit_kerja = LaravelOpdModel::create([
-                'kunker' => $request->kunker,
+                'uuid'          => Uuid::uuid5(Uuid::NAMESPACE_DNS, 'bantenprov.go.id'.date('YmdHis')),
+                'kunker'        => $request->kunker,
                 'kunker_sinjab' => '',
                 'kunker_simral' => '',
                 'kunker_sinjab' => '',
-                'name' => $request->name,
-                'levelunker' => $request->levelunker,
-                'njab' => $request->njab,
-                'npej' => $request->npej
+                'name'          => $request->name,
+                'levelunker'    => $request->levelunker,
+                'njab'          => $request->njab,
+                'npej'          => $request->npej
             ]);
         }
         else
@@ -106,6 +108,7 @@ class LaravelOpdController extends Controller
         $check_root = LaravelOpdModel::where('id',$request->root);
 
             $check_root->first()->children()->create([
+                'uuid'              => Uuid::uuid5(Uuid::NAMESPACE_DNS, 'bantenprov.go.id'.date('YmdHis')),
                 'kunker'            => $request->c_kunker,
                 'kunker_simral'     => '',
                 'kunker_sinjab'     => '',
