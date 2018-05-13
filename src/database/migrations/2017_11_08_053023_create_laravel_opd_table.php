@@ -17,9 +17,8 @@ class CreateLaravelOpdTable extends Migration
     public function up()
     {
         Schema::create('opd', function (Blueprint $table) {
-            //$table->increments('id');
-            $table->uuid('id')->unique();
-            $table->primary('id');
+            $table->increments('id');
+            $table->uuid('uuid')->unique();
             $table->string('kunker')->index();
             $table->string('name');
             $table->string('kunker_sinjab')->nullable();            
@@ -28,7 +27,7 @@ class CreateLaravelOpdTable extends Migration
             $table->string('njab');
             $table->string('npej');
             NestedSet::columns($table);
-            $table->timestamps();   
+            $table->timestamps();
         });
     }
 
