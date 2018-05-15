@@ -25,7 +25,7 @@ $ composer create-project --prefer-dist laravel/laravel project-name "5.4.*"
 
 ```bash
 
-$ composer require bantenprov/laravel-opd:dev-master
+$ composer require bantenprov/laravel-opd:dev-ui
 
 ```
 
